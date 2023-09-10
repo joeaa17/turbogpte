@@ -1,87 +1,105 @@
-# GPT4All REST API
-This directory contains the source code to run and build docker images that run a FastAPI app
-for serving inference from GPT4All models. The API matches the OpenAI API spec.
+<h1 align="center">GPT4All</h1>
 
-## Tutorial
+<p align="center">Open-source assistant-style large language models that run locally on your CPU</p>
 
-The following tutorial assumes that you have checked out this repo and cd'd into it.
+<p align="center">
+<a href="https://gpt4all.io">GPT4All Website</a>
+</p>
 
-### Starting the app
+<p align="center">
+<a href="https://docs.gpt4all.io">GPT4All Documentation</a>
+</p>
 
-First change your working directory to `gpt4all/gpt4all-api`.
+<p align="center">
+<a href="https://discord.gg/mGZE39AS3e">Discord</a>
+</p>
 
-Now you can build the FastAPI docker image. You only have to do this on initial build or when you add new dependencies to the requirements.txt file:
-```bash
-DOCKER_BUILDKIT=1 docker build -t gpt4all_api --progress plain -f gpt4all_api/Dockerfile.buildkit .
+<p align="center">
+<a href="https://python.langchain.com/en/latest/modules/models/llms/integrations/gpt4all.html">🦜️🔗 Official Langchain Backend</a> 
+</p>
+
+<p align="center">
+GPT4All is made possible by our compute partner <a href="https://www.paperspace.com/">Paperspace</a>.
+</p>
+
+<p align="center">
+  <img width="600" height="365" src="https://user-images.githubusercontent.com/13879686/231876409-e3de1934-93bb-4b4b-9013-b491a969ebbc.gif">
+</p>
+<p align="center">
+Run on an M1 macOS Device (not sped up!)
+</p>
+
+## GPT4All: An ecosystem of open-source on-edge large language models.
+GPT4All is an ecosystem to train and deploy **powerful** and **customized** large language models that run locally on consumer grade CPUs. Note that your CPU needs to support [AVX or AVX2 instructions](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions).
+
+Learn more in the [documentation](https://docs.gpt4all.io).
+
+The goal is simple - be the best instruction tuned assistant-style language model that any person or enterprise can freely use, distribute and build on.
+
+A GPT4All model is a 3GB - 8GB file that you can download and plug into the GPT4All open-source ecosystem software. **Nomic AI** supports and maintains this software ecosystem to enforce quality and security alongside spearheading the effort to allow any person or enterprise to easily train and deploy their own on-edge large language models. 
+
+
+### Chat Client
+Run any GPT4All model natively on your home desktop with the auto-updating desktop chat client. See <a href="https://gpt4all.io">GPT4All Website</a> for a full list of open-source models you can run with this powerful desktop application.
+
+Direct Installer Links:
+
+* [macOS](https://gpt4all.io/installers/gpt4all-installer-darwin.dmg)
+
+* [Windows](https://gpt4all.io/installers/gpt4all-installer-win64.exe)
+
+* [Ubuntu](https://gpt4all.io/installers/gpt4all-installer-linux.run)
+
+Find the most up-to-date information on the [GPT4All Website](https://gpt4all.io/)
+
+### Chat Client building and running
+
+* Follow the visual instructions on the chat client [build_and_run](gpt4all-chat/build_and_run.md) page
+
+### Bindings
+
+* <a href="https://github.com/nomic-ai/gpt4all/tree/main/gpt4all-bindings/python/README.md">:snake: Official Python Bindings</a> [![Downloads](https://static.pepy.tech/badge/gpt4all/week)](https://pepy.tech/project/gpt4all)
+* <a href="https://github.com/nomic-ai/gpt4all/tree/main/gpt4all-bindings/typescript">:computer: Official Typescript Bindings</a>
+* <a href="https://github.com/nomic-ai/gpt4all/tree/main/gpt4all-bindings/golang">:computer: Official GoLang Bindings</a>
+* <a href="https://github.com/nomic-ai/gpt4all/tree/main/gpt4all-bindings/csharp">:computer: Official C# Bindings</a>
+* <a href="https://github.com/nomic-ai/gpt4all/tree/main/gpt4all-bindings/java">:computer: Official Java Bindings</a>
+
+### Integrations
+
+* 🗃️ [Weaviate Vector Database](https://github.com/weaviate/weaviate) - [module docs](https://weaviate.io/developers/weaviate/modules/retriever-vectorizer-modules/text2vec-gpt4all)
+
+## Contributing
+GPT4All welcomes contributions, involvement, and discussion from the open source community!
+Please see CONTRIBUTING.md and follow the issues, bug reports, and PR markdown templates.
+
+Check project discord, with project owners, or through existing issues/PRs to avoid duplicate work.
+Please make sure to tag all of the above with relevant project identifiers or your contribution could potentially get lost.
+Example tags: `backend`, `bindings`, `python-bindings`, `documentation`, etc.
+
+## Technical Reports
+
+<p align="center">
+<a href="https://gpt4all.io/reports/GPT4All_Technical_Report_3.pdf">:green_book: Technical Report 3: GPT4All Snoozy and Groovy </a>
+</p>
+
+<p align="center">
+<a href="https://static.nomic.ai/gpt4all/2023_GPT4All-J_Technical_Report_2.pdf">:green_book: Technical Report 2: GPT4All-J </a>
+</p>
+
+<p align="center">
+<a href="https://s3.amazonaws.com/static.nomic.ai/gpt4all/2023_GPT4All_Technical_Report.pdf">:green_book: Technical Report 1: GPT4All</a>
+</p>
+
+## Citation
+
+If you utilize this repository, models or data in a downstream project, please consider citing it with:
 ```
-
-Then, start the backend with:
-
-```bash
-docker compose up --build
-```
-
-This will run both the API and locally hosted GPU inference server. If you want to run the API without the GPU inference server, you can run:
-
-```bash
-docker compose up --build gpt4all_api
-```
-
-To run the API with the GPU inference server, you will need to include environment variables (like the `MODEL_ID`). Edit the `.env` file and run
-```bash
-docker compose --env-file .env up --build
-```
-
-
-#### Spinning up your app
-Run `docker compose up` to spin up the backend. Monitor the logs for errors in-case you forgot to set an environment variable above.
-
-
-#### Development
-Run
-
-```bash
-docker compose up --build
-```
-and edit files in the `api` directory. The api will hot-reload on changes.
-
-You can run the unit tests with
-
-```bash
-make test
-```
-
-#### Viewing API documentation
-
-Once the FastAPI ap is started you can access its documentation and test the search endpoint by going to:
-```
-localhost:80/docs
-```
-
-This documentation should match the OpenAI OpenAPI spec located at https://github.com/openai/openai-openapi/blob/master/openapi.yaml
-
-
-#### Running inference
-```python
-import openai
-openai.api_base = "http://localhost:4891/v1"
-
-openai.api_key = "not needed for a local LLM"
-
-
-def test_completion():
-    model = "gpt4all-j-v1.3-groovy"
-    prompt = "Who is Michael Jordan?"
-    response = openai.Completion.create(
-        model=model,
-        prompt=prompt,
-        max_tokens=50,
-        temperature=0.28,
-        top_p=0.95,
-        n=1,
-        echo=True,
-        stream=False
-    )
-    assert len(response['choices'][0]['text']) > len(prompt)
-    print(response)
+@misc{gpt4all,
+  author = {Yuvanesh Anand and Zach Nussbaum and Brandon Duderstadt and Benjamin Schmidt and Andriy Mulyar},
+  title = {GPT4All: Training an Assistant-style Chatbot with Large Scale Data Distillation from GPT-3.5-Turbo},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/nomic-ai/gpt4all}},
+}
 ```
