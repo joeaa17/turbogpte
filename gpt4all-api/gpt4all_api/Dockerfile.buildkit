@@ -1,9 +1,9 @@
 # syntax=docker/dockerfile:1.0.0-experimental
 FROM tiangolo/uvicorn-gunicorn:python3.11
 
-ARG MODEL_BIN=ggml-mpt-7b-chat.bin
+ARG MODEL_BIN=ggml-replit-code-v1-3b.bin
 
-# Put first so anytime this file changes other cached layers are invalidated.
+Put first so anytime this file changes other cached layers are invalidated.
 COPY gpt4all_api/requirements.txt /requirements.txt
 
 RUN pip install --upgrade pip
@@ -18,6 +18,6 @@ COPY gpt4all_api/app /app
 RUN mkdir -p /models
 
 # Include the following line to bake a model into the image and not have to download it on API start.
-RUN wget -q --show-progress=off https://gpt4all.io/models/${MODEL_BIN} -P /models \
-  && md5sum /models/${MODEL_BIN}
+RUN wget -q --show-progress=on https://huggingface.co/nomic-ai/ggml-replit-code-v1-3b/resolve/main/${MODEL_BIN} -P /models \
+  && md5sum https://huggingface.co/nomic-ai/ggml-replit-code-v1-3b/resolve/main/${MODEL_BIN}
 
