@@ -16,7 +16,7 @@
     "order": "b",
     "md5sum": "725f148218a65ce8ebcc724e52f31b49",
     "name": "GPT4All Falcon",
-    "filename": "llama-2-7b-chat.ggmlv3.q4_0.bin",
+    "filename": "ggml-model-gpt4all-falcon-q4_0.bin",
     "filesize": "4061641216",
     "requires": "2.4.9",
     "ramrequired": "8",
@@ -25,7 +25,7 @@
     "type": "Falcon",
     "systemPrompt": " ",
     "description": "<strong>Best overall smaller model</strong><br><ul><li>Fast responses</li><li>Instruction based</li><li>Trained by TII<li>Finetuned by Nomic AI<li>Licensed for commercial use</ul>",
-    "url": "https://huggingface.co/nomic-ai/gpt4all-falcon-ggml/resolve/main/llama-2-7b-chat.ggmlv3.q4_0.bin",
+    "url": "https://huggingface.co/nomic-ai/gpt4all-falcon-ggml/resolve/main/ggml-model-gpt4all-falcon-q4_0.bin",
     "promptTemplate": "### Instruction:\n%1\n### Response:\n"
   },
   {
@@ -127,7 +127,7 @@
     "md5sum": "615890cb571fcaa0f70b2f8d15ef809e",
     "disableGUI": "true",
     "name": "Replit",
-    "filename": "llama-2-7b-chat.ggmlv3.q4_0.bin",
+    "filename": "ggml-replit-code-v1-3b.bin",
     "filesize": "5202046853",
     "requires": "2.4.7",
     "ramrequired": "4",
@@ -137,7 +137,7 @@
     "systemPrompt": " ",
     "promptTemplate": "%1",
     "description": "<strong>Trained on subset of the Stack</strong><br><ul><li>Code completion based<li>Licensed for commercial use</ul>",
-    "url": "https://huggingface.co/nomic-ai/llama-2-7b-chat.ggmlv3.q4_0/resolve/main/llama-2-7b-chat.ggmlv3.q4_0.bin"
+    "url": "https://huggingface.co/nomic-ai/ggml-replit-code-v1-3b/resolve/main/ggml-replit-code-v1-3b.bin"
   },
   {
     "order": "t",

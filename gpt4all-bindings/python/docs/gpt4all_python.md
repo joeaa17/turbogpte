@@ -385,7 +385,7 @@ are used instead of model-specific system and prompt templates:
 === "GPT4All Default Templates Example"
     ``` py
     from gpt4all import GPT4All
-    model = GPT4All('llama-2-7b-chat.ggmlv3.q4_0.bin', allow_download=False)
+    model = GPT4All('ggml-mpt-7b-chat.bin', allow_download=False)
     # when downloads are disabled, it will use the default templates:
     print("default system template:", repr(model.config['systemPrompt']))
     print("default prompt template:", repr(model.config['promptTemplate']))

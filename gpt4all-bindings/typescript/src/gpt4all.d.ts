@@ -28,10 +28,10 @@ interface ModelFile {
     /** List of MPT Models */
     mpt:
         | "ggml-mpt-7b-base.bin"
-        | "llama-2-7b-chat.ggmlv3.q4_0.bin"
+        | "ggml-mpt-7b-chat.bin"
         | "ggml-mpt-7b-instruct.bin";
     /** List of Replit Models */
-    replit: "llama-2-7b-chat.ggmlv3.q4_0.bin";
+    replit: "ggml-replit-code-v1-3b.bin";
 }
 
 //mirrors py options
