@@ -12,7 +12,7 @@ services:
       - WEB_CONCURRENCY=2
       - LOGLEVEL=debug
       - PORT=80
-      - model=ggml-model-gpt4all-falcon-q4_0.bin
+      - model=llama-2-7b-chat.ggmlv3.q4_0.bin
       - inference_mode=cpu
     volumes:
       - './gpt4all_api/app:/app'

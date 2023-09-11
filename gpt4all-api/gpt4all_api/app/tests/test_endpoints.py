@@ -11,7 +11,7 @@ openai.api_key = "not needed for a local LLM"
 
 
 def test_completion():
-    model = "ggml-model-gpt4all-falcon-q4_0.bin"
+    model = "llama-2-7b-chat.ggmlv3.q4_0.bin"
     prompt = "Who is Michael Jordan?"
     response = openai.Completion.create(
         model=model, prompt=prompt, max_tokens=50, temperature=0.28, top_p=0.95, n=1, echo=True, stream=False
@@ -19,7 +19,7 @@ def test_completion():
     assert len(response['choices'][0]['text']) > len(prompt)
 
 def test_streaming_completion():
-    model = "ggml-model-gpt4all-falcon-q4_0.bin"
+    model = "llama-2-7b-chat.ggmlv3.q4_0.bin"
     prompt = "Who is Michael Jordan?"
     tokens = []
     for resp in openai.Completion.create(
@@ -38,7 +38,7 @@ def test_streaming_completion():
 
 
 def test_batched_completion():
-    model = "ggml-model-gpt4all-falcon-q4_0.bin"
+    model = "llama-2-7b-chat.ggmlv3.q4_0.bin"
     prompt = "Who is Michael Jordan?"
     response = openai.Completion.create(
         model=model, prompt=[prompt] * 3, max_tokens=50, temperature=0.28, top_p=0.95, n=1, echo=True, stream=False

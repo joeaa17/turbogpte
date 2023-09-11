@@ -257,13 +257,13 @@ Type: (`"ggml-gpt4all-l13b-snoozy.bin"` | `"ggml-vicuna-7b-1.1-q4_2.bin"` | `"gg
 
 List of MPT Models
 
-Type: (`"ggml-mpt-7b-base.bin"` | `"ggml-model-gpt4all-falcon-q4_0.bin"` | `"ggml-mpt-7b-instruct.bin"`)
+Type: (`"ggml-mpt-7b-base.bin"` | `"llama-2-7b-chat.ggmlv3.q4_0.bin"` | `"ggml-mpt-7b-instruct.bin"`)
 
 ##### replit
 
 List of Replit Models
 
-Type: `"ggml-model-gpt4all-falcon-q4_0.bin"`
+Type: `"llama-2-7b-chat.ggmlv3.q4_0.bin"`
 
 #### type
 

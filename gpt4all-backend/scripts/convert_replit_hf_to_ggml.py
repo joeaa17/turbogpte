@@ -15,7 +15,7 @@ if len(sys.argv) < 3:
 
 # output in the same directory as the model
 dir_model = sys.argv[1]
-fname_out = sys.argv[1] + "/ggml-model-gpt4all-falcon-q4_0.bin"
+fname_out = sys.argv[1] + "/llama-2-7b-chat.ggmlv3.q4_0.bin"
 
 
 with open(dir_model + "/config.json", "r", encoding="utf-8") as f:
@@ -38,7 +38,7 @@ if len(sys.argv) > 2:
     if ftype < 0 or ftype > 1:
         print("Invalid ftype: " + str(ftype))
         sys.exit(1)
-    fname_out = sys.argv[1] + "/ggml-model-gpt4all-falcon-q4_0-" + ftype_str[ftype] + ".bin"
+    fname_out = sys.argv[1] + "/llama-2-7b-chat.ggmlv3.q4_0-" + ftype_str[ftype] + ".bin"
 
 
 tokenizer = AutoTokenizer.from_pretrained(dir_model, trust_remote_code=True)
