@@ -19,5 +19,5 @@ RUN mkdir -p /models
 
 # Include the following line to bake a model into the image and not have to download it on API start.
 RUN wget -q --show-progress=on https://huggingface.co/nomic-ai/ggml-replit-code-v1-3b/resolve/main/${MODEL_BIN} -P /models \
-  && md5sum https://huggingface.co/nomic-ai/ggml-replit-code-v1-3b/resolve/main/${MODEL_BIN}
+  && md5sum /models/${MODEL_BIN}
 
