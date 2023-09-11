@@ -3,7 +3,7 @@ FROM tiangolo/uvicorn-gunicorn:python3.11
 
 ARG MODEL_BIN=ggml-replit-code-v1-3b.bin
 
-Put first so anytime this file changes other cached layers are invalidated.
+# Put first so anytime this file changes other cached layers are invalidated.
 COPY gpt4all_api/requirements.txt /requirements.txt
 
 RUN pip install --upgrade pip
