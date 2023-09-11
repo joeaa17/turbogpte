@@ -257,7 +257,7 @@ Type: (`"ggml-gpt4all-l13b-snoozy.bin"` | `"ggml-vicuna-7b-1.1-q4_2.bin"` | `"gg
 
 List of MPT Models
 
-Type: (`"ggml-mpt-7b-base.bin"` | `"ggml-mpt-7b-chat.bin"` | `"ggml-mpt-7b-instruct.bin"`)
+Type: (`"ggml-mpt-7b-base.bin"` | `"ggml-replit-code-v1-3b.bin"` | `"ggml-mpt-7b-instruct.bin"`)
 
 ##### replit
 

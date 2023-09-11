@@ -28,7 +28,7 @@ interface ModelFile {
     /** List of MPT Models */
     mpt:
         | "ggml-mpt-7b-base.bin"
-        | "ggml-mpt-7b-chat.bin"
+        | "ggml-replit-code-v1-3b.bin"
         | "ggml-mpt-7b-instruct.bin";
     /** List of Replit Models */
     replit: "ggml-replit-code-v1-3b.bin";

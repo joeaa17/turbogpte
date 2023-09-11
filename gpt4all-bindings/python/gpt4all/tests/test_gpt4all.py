@@ -67,7 +67,7 @@ def test_inference_long_llama_13b():
 
 
 def test_inference_long_mpt():
-    model = GPT4All(model_name='ggml-mpt-7b-chat.bin')
+    model = GPT4All(model_name='ggml-replit-code-v1-3b.bin')
     do_long_input(model)
 
 
@@ -97,7 +97,7 @@ def test_inference_falcon():
 
 
 def test_inference_mpt():
-    model = GPT4All(model_name='ggml-mpt-7b-chat.bin')
+    model = GPT4All(model_name='ggml-replit-code-v1-3b.bin')
     prompt = 'hello'
     output = model.generate(prompt)
     assert isinstance(output, str)
