@@ -28,10 +28,10 @@ interface ModelFile {
     /** List of MPT Models */
     mpt:
         | "ggml-mpt-7b-base.bin"
-        | "ggml-replit-code-v1-3b.bin"
+        | "ggml-model-gpt4all-falcon-q4_0.bin"
         | "ggml-mpt-7b-instruct.bin";
     /** List of Replit Models */
-    replit: "ggml-replit-code-v1-3b.bin";
+    replit: "ggml-model-gpt4all-falcon-q4_0.bin";
 }
 
 //mirrors py options

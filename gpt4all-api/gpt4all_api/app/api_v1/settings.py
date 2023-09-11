@@ -3,7 +3,7 @@ from pydantic import BaseSettings
 
 class Settings(BaseSettings):
     app_environment = 'dev'
-    model: str = 'ggml-replit-code-v1-3b.bin'
+    model: str = 'ggml-model-gpt4all-falcon-q4_0.bin'
     gpt4all_path: str = '/models'
     inference_mode: str = "cpu"
     hf_inference_server_host: str = "http://gpt4all_gpu:80/generate"
