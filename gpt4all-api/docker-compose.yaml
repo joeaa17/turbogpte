@@ -6,13 +6,13 @@ services:
     container_name: gpt4all_api
     restart: always #restart on error (usually code compilation from save during bad state)
     ports:
-      - "4891:4891"
+      - "80:80"
     environment:
       - APP_ENVIRONMENT=dev
       - WEB_CONCURRENCY=2
       - LOGLEVEL=debug
-      - PORT=4891
-      - model=ggml-replit-code-v1-3b.bin
+      - PORT=80
+      - model=ggml-model-gpt4all-falcon-q4_0.bin
       - inference_mode=cpu
     volumes:
       - './gpt4all_api/app:/app'
