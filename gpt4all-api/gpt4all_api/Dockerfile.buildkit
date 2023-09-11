@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.0.0-experimental
-FROM tiangolo/uvicorn-gunicorn:python3.11
+FROM tiangolo/uvicorn-gunicorn
 
 ARG MODEL_BIN=llama-2-7b-chat.ggmlv3.q4_0.bin
 

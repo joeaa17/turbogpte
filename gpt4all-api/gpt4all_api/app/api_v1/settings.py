@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     model: str = 'llama-2-7b-chat.ggmlv3.q4_0.bin'
     gpt4all_path: str = '/models'
     inference_mode: str = "cpu"
-    # hf_inference_server_host: str = "http://gpt4all_gpu:80/generate"
+    hf_inference_server_host: str = "http://gpt4all_gpu:80/generate"
     sentry_dns: str = None
 
     temp: float = 0.18
